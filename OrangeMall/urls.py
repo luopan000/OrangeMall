@@ -8,7 +8,7 @@ from django.contrib import admin
 from django.conf.urls import url
 
 # from django.urls import path
-from index import views
+from apps.index import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),

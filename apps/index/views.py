@@ -11,6 +11,6 @@ from django.http import HttpResponse
 
 
 def index(request):
-    msg = 'index is ok！Hello Django'
+    msg = 'index test is ok！Hello Django'
     response = HttpResponse(f'<h1>{msg}<h1>')
     return response
