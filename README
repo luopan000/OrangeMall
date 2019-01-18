@@ -1,0 +1,33 @@
+---------------------------------------项目开发文档---------------------------------------
+
+1.环境
+
+    python 版本 3.6.0以上3.7.0以下
+    django 版本 1.11.12
+
+    需要自己创建运行环境，github上不上传，手动创建运行环境方法（windows）：
+        cmd下：
+            1.pip install virtualenv
+            下载慢可加源：（pip install virtualenv -i http://pypi.douban.com/simple/）
+            2.virtualenv  查看是否安装成功
+            3.virtualenv [虚拟环境根目录名称] --python=python3
+            4.激活  进入创建好的环境变量根目录scripts中去，cmd中输入activate.bat运行    （windows）
+
+    数据库 mysql （连接远程数据库服务器命令：mysql -u[账号] -p[密码] -P[端口号] -h[IP地址]）
+
+        name： omdb
+        ip：  192.168.50.50
+        port：3306
+        username：   root
+        password：   root
+
+    各种第三方库已经导出到requirement.txt 自行下载 如有自己需要 可自行补充并附上下载记录与时间
+
+2.数据库表命名
+        查看群内上传
+
+
+
+
+
+
