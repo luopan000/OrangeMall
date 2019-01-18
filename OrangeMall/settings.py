@@ -25,15 +25,32 @@ ALLOWED_HOSTS = []
 # 注册app（在开发中一个功能块相当于一个app，
 # 创建完一个app后一定要在这里注册，
 # 方法是加入根目录（app名）名称）
-INSTALLED_APPS = [
+
+# 系统功能模块
+SYS_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.index',
 ]
+
+# 第三方功能模块
+EXT_APPS = [
+    # 'bootstrap3',
+    # 'crispy_forms',
+    # 'xadmin',
+    # 'reversion',
+]
+
+# 自定义功能模块
+CUSTOM_APPS = [
+    'apps.main',
+
+]
+
+INSTALLED_APPS = SYS_APPS + EXT_APPS + CUSTOM_APPS
 
 # 中间件
 MIDDLEWARE = [
@@ -73,14 +90,15 @@ TEMPLATES = [
 # 测试环境不要修改 （指向wsgi.py文件）
 WSGI_APPLICATION = 'OrangeMall.wsgi.application'
 
-
-
-
 # 数据库配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'omdb',
+        'POST': '3306',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
     }
 }
 
@@ -100,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 #  后台语言  zh-hans中文
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'UTC'
 
@@ -112,3 +130,8 @@ USE_TZ = True
 
 # 静态文件的访问路径
 STATIC_URL = '/static/'
+
+# 静态文件配置 不同的app模块创建不同的static
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'apps/main/static'),
+
+                    )

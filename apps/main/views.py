@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+# from django.shortcuts import render
 
 """
 写视图函数流程：
@@ -10,7 +11,8 @@ from django.http import HttpResponse
 """
 
 
-def index(request):
-    msg = 'index test is ok！Hello Django'
+def main(request):
+    msg = 'Test main  is ok！Hello Django！'
     response = HttpResponse(f'<h1>{msg}<h1>')
     return response
+

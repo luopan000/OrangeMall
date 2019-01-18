@@ -8,11 +8,11 @@ from django.contrib import admin
 from django.conf.urls import url
 
 # from django.urls import path
-from apps.index import views
+from apps.main import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     url('admin/', admin.site.urls),
     # path --->视图函数
-    url('index/', views.index)
+    url('main/', views.main)
 ]
